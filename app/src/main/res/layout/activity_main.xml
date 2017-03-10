@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/radio_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="19dp"
+        android:text="Is this necessary?"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radio_prompt"
+        android:layout_alignStart="@+id/radio_prompt">
+
+        <RadioButton
+            android:id="@+id/option1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Nope" />
+
+        <RadioButton
+            android:id="@+id/option2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You care?" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/check_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/radiogroup"
+        android:layout_below="@+id/radiogroup"
+        android:layout_marginTop="14dp"
+        android:text="Check all that you like :"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+        android:textSize="18sp" />
+
+    <CheckBox
+        android:id="@+id/option_sherlock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/check_prompt"
+        android:layout_below="@+id/check_prompt"
+        android:text="Sherlock" />
+
+    <CheckBox
+        android:id="@+id/option_mrrobot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/option_sherlock"
+        android:layout_below="@+id/option_sherlock"
+        android:text="Mr. Robot" />
+
+    <CheckBox
+        android:id="@+id/option_scandal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/option_mrrobot"
+        android:layout_below="@+id/option_mrrobot"
+        android:text="Scandal" />
+
+    <CheckBox
+        android:id="@+id/option_personOfInterest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/check_prompt"
+        android:layout_toEndOf="@+id/radio_prompt"
+        android:text="Person of Interest" />
+
+    <CheckBox
+        android:id="@+id/option_lukecage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/option_personOfInterest"
+        android:layout_below="@+id/option_personOfInterest"
+        android:text="Luke Cage" />
+
+    <CheckBox
+        android:id="@+id/option_strangerthings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/option_lukecage"
+        android:layout_below="@+id/option_lukecage"
+        android:text="Stranger Things" />
+
+    <CheckedTextView
+        android:id="@+id/checkedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/option_scandal"
+        android:layout_below="@+id/option_scandal"
+        android:layout_marginTop="26dp"
+        android:checkMark="@android:drawable/alert_dark_frame"
+        android:checkMarkTint="@android:color/holo_green_light"
+        android:checkMarkTintMode="add"
+        android:checked="false"
+        android:text="I was paid to do this"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/spinner_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/checkedTextView"
+        android:layout_below="@+id/checkedTextView"
+        android:layout_marginTop="13dp"
+        android:layout_toStartOf="@+id/option_strangerthings"
+        android:text="I was born in : "
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/spinner_prompt"
+        android:layout_toEndOf="@+id/check_prompt" />
+
+
+</RelativeLayout>

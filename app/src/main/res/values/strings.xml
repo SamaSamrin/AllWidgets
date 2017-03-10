@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">AllWidgets</string>
+    <string-array name="spinner_options">
+        <item> 1985 </item>
+        <item> 1986 </item>
+        <item> 1987 </item>
+        <item> 1988 </item>
+        <item> 1989 </item>
+        <item> 1990 </item>
+        <item> 1991 </item>
+        <item> 1992 </item>
+        <item> 1993 </item>
+        <item> 1994 </item>
+        <item> 1995 </item>
+        <item> 1996 </item>
+    </string-array>
+</resources>
