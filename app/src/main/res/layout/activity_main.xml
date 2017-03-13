@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_layout"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -43,7 +45,7 @@
         android:layout_alignStart="@+id/radiogroup"
         android:layout_below="@+id/radiogroup"
         android:layout_marginTop="14dp"
-        android:text="Check all that you like :"
+        android:text="I like :"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault"
         android:textSize="18sp" />
 
@@ -127,7 +129,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/spinner_prompt"
-        android:layout_toEndOf="@+id/check_prompt" />
+        android:layout_toEndOf="@+id/option_lukecage" />
+
+    <Spinner
+        android:id="@+id/spinner_month"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/spinner"
+        android:layout_toStartOf="@+id/spinner" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="42dp"
+        android:text="Go to the next part"
+        android:onClick="goToWidget2"/>
 
 
 </RelativeLayout>

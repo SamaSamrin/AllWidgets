@@ -4,8 +4,8 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/widgets_whiteback"
         android:fullBackupContent="true"
+        android:icon="@mipmap/widgets_whiteback"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -17,6 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Widgets2"
+            android:label="@string/title_activity_widgets2"></activity>
     </application>
 
 </manifest>
