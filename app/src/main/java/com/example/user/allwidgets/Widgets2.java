@@ -142,7 +142,7 @@ public class Widgets2 extends Activity {
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                
+
             }
         });
     }
