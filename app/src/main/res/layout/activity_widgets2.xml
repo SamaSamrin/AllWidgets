@@ -27,8 +27,11 @@
         android:id="@+id/seekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/horizontalProgressBar"
-        android:layout_marginTop="41dp" />
+        android:max="30"
+        android:progressTintMode="src_over"
+        android:layout_below="@+id/seekbarStatusText"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp" />
 
     <TextView
         android:id="@+id/seekbarStatusText"
@@ -39,4 +42,48 @@
         android:layout_marginTop="20dp"
         android:text="SeekBar status: "
         android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/discreteSeekbarStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:text="Discrete SeekBar status: "
+        android:textAlignment="center" />
+
+    <SeekBar
+        android:id="@+id/discreteSeekBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/discreteSeekbarStatus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
+        android:max="10"
+        android:progress="3"
+        android:progressTint="@android:color/holo_red_dark"
+        android:progressTintMode="src_over"
+        android:thumb="@drawable/mark_red" />
+
+    <TextView
+        android:id="@+id/rateBarText"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignStart="@+id/seekBar"
+        android:layout_below="@+id/discreteSeekBar"
+        android:layout_marginTop="21dp"
+        android:gravity="center_vertical"
+        android:text="Rate Me ( ͡° ͜ʖ ͡°)  "
+        android:textAlignment="center"
+        android:textStyle="bold" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/rateBarText"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/rateBarText" />
 </RelativeLayout>

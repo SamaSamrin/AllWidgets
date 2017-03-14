@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.RatingBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -28,6 +29,9 @@ public class Widgets2 extends Activity {
     private SeekBar seekbar;
     private TextView seekbarStatusDisplay;
     int progressThis = 0;
+    private SeekBar discreteSeekbar;
+    private TextView discreteSeekbarStatusDisplay;
+    private RatingBar ratingBar;
 
 
     @Override
@@ -41,9 +45,16 @@ public class Widgets2 extends Activity {
 
         seekbar = (SeekBar) findViewById(R.id.seekBar);
         handleSeekbar();
-
         seekbarStatusDisplay = (TextView) findViewById(R.id.seekbarStatusText);
         seekbarStatusDisplay.setText("SeekBar status: Max="+seekbar.getMax());
+
+        discreteSeekbar = (SeekBar) findViewById(R.id.discreteSeekBar);
+        discreteSeekbarStatusDisplay = (TextView) findViewById(R.id.discreteSeekbarStatus);
+        discreteSeekbarStatusDisplay.setText("Discrete SeekBar status: Max="+discreteSeekbar.getMax());
+        handleDiscreteSeekbar();
+
+        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        handleRatingBar();
     }
 
     private void handleProgressBar(){
@@ -103,6 +114,35 @@ public class Widgets2 extends Activity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 seekbarStatusDisplay.setText("SeekBar status: Stopped,  Current Progress="+progressThis);
+            }
+        });
+    }
+
+    private void handleDiscreteSeekbar(){
+        discreteSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                progressThis = progress;
+                //Log.e(TAG, String.valueOf(progressThis));
+                discreteSeekbarStatusDisplay.setText("Discrete SeekBar status: "+progressThis);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                discreteSeekbarStatusDisplay.setText("Discrete SeekBar status: "+progressThis);
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                discreteSeekbarStatusDisplay.setText("Discrete SeekBar status: "+progressThis);
+            }
+        });
+    }
+
+    private void handleRatingBar(){
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                
             }
         });
     }
