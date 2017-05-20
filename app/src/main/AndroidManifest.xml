@@ -18,8 +18,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Widgets2"
-            android:label="@string/title_activity_widgets2"></activity>
+            android:name=".TextStuff"
+            android:label="@string/title_activity_text_stuff" />
+        <activity android:name=".GridViewDemo"></activity>
     </application>
 
 </manifest>
