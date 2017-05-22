@@ -2,6 +2,7 @@ package com.example.user.allwidgets;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -67,6 +68,11 @@ public class ExpandableListViewDemo extends Activity {
         childrenList.put(headerList.get(0), fruitsList);//prothom position e fruits List thakbe
         childrenList.put(headerList.get(1), bakeryList);
         childrenList.put(headerList.get(2), smoothiesList);
+    }
+
+    public void goToTable(View view){
+        Intent i = new Intent(ExpandableListViewDemo.this, TableDemo.class);
+        startActivity(i);
     }
 }
 
