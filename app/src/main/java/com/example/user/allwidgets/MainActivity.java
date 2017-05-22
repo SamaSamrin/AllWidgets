@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-    private static final String TAG = "*Widgets2*";
+    private static final String TAG = "*MainActivity*";
     Spinner spinner ;
     Spinner spinner_months;
     ProgressBar circularProgressBar;//mainly used during thread works
@@ -101,7 +101,7 @@ public class MainActivity extends Activity {
             public void run() {
                 while (horizontalProgressStatus <= 1000){
                     horizontalProgressStatus++;
-                    Log.e(TAG, String.valueOf(horizontalProgressStatus));
+                    //Log.e(TAG, String.valueOf(horizontalProgressStatus));
                     horizontalProgressBar.setProgress(horizontalProgressStatus);//shows filled up progress bar from the beginning
                 }
             }

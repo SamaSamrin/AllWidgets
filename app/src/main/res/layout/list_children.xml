@@ -6,27 +6,26 @@
     android:padding="10dp">
 
     <TextView
-        android:id="@+id/list_item_apple"
+        android:id="@+id/list_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Apple"
         android:textAlignment="center"
         android:padding="10dp"/>
 
-    <TextView
-        android:id="@+id/list_item_orange"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Orange"
-        android:textAlignment="center"
-        android:padding="10dp"/>
+    <!--<TextView-->
+        <!--android:id="@+id/list_item_orange"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Orange"-->
+        <!--android:textAlignment="center"-->
+        <!--android:padding="10dp"/>-->
 
-    <TextView
-        android:id="@+id/list_item_mango"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Mango"
-        android:textAlignment="center"
-        android:padding="10dp"/>
+    <!--<TextView-->
+        <!--android:id="@+id/list_item_mango"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Mango"-->
+        <!--android:textAlignment="center"-->
+        <!--android:padding="10dp"/>-->
 
 </LinearLayout>

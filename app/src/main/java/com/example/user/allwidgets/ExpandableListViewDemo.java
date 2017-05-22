@@ -3,16 +3,21 @@ package com.example.user.allwidgets;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class ExpandableListViewDemo extends Activity {
+
+    final static String TAG = "**ExpandableListViewDemo**";
 
     ExpandableListView elv;
     ExpandableListAdapterDemo adapter;
@@ -67,6 +72,8 @@ public class ExpandableListViewDemo extends Activity {
 
 class ExpandableListAdapterDemo extends BaseExpandableListAdapter{
 
+    static final String TAG = "ExListAdapterDemo";
+
     Context context = null;
     private List<String> listDataHeader; // header titles
     // child data in format of header title, child title
@@ -80,38 +87,40 @@ class ExpandableListAdapterDemo extends BaseExpandableListAdapter{
         this.listDataChild = listChildData;
     }
 
-    ExpandableListAdapterDemo(Context context){
-        this.context = context;
-    }
+//    ExpandableListAdapterDemo(Context context){
+//        this.context = context;
+//    }
 
     @Override
     public int getGroupCount() {
-        return 0;
+        return this.listDataHeader.size();
     }
 
     @Override
     public int getChildrenCount(int i) {
-        return 0;
+        return this.listDataChild.get(this.listDataHeader.get(i)).size();
     }
 
     @Override
     public Object getGroup(int i) {
-        return null;
+        return this.listDataHeader.get(i);
     }
 
     @Override
     public Object getChild(int i, int i1) {
-        return null;
+        return this.listDataChild.get(this.listDataHeader.get(i)).get(i1);
+        //i group position or header position and i1 child position
+        //i positioned group/header-er i1 position er child ke ferot pathacche
     }
 
     @Override
     public long getGroupId(int i) {
-        return 0;
+        return i;
     }
 
     @Override
     public long getChildId(int i, int i1) {
-        return 0;
+        return i1;//i1 is child position
     }
 
     @Override
@@ -121,16 +130,41 @@ class ExpandableListAdapterDemo extends BaseExpandableListAdapter{
 
     @Override
     public View getGroupView(int i, boolean b, View view, ViewGroup viewGroup) {
-        return null;
+        String groupHeaderTitle = (String) getGroup(i);
+        if(view == null){
+            Log.e(TAG, "getGroupView : null view");
+            LayoutInflater inf = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inf.inflate(R.layout.list_headers, null);
+        }
+        TextView header = (TextView) view.findViewById(R.id.header);
+        header.setText(groupHeaderTitle);
+        return view;
     }
 
     @Override
     public View getChildView(int i, int i1, boolean b, View view, ViewGroup viewGroup) {
-        return null;
+        String childTitle = (String) getChild(i, i1);
+        if (view == null){
+            LayoutInflater inf = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inf.inflate(R.layout.list_children, null);
+        }
+        TextView child = (TextView) view.findViewById(R.id.list_item) ;
+        child.setText(childTitle);
+//        if(i1 == 0)
+//            child = (TextView) view.findViewById(R.id.list_item_apple);
+//        else if (i1 == 1)
+//            child = (TextView) view.findViewById(R.id.list_item_orange);
+//        else if (i1 == 2)
+//            child = (TextView) view.findViewById(R.id.list_item_mango);
+//        if (child != null)
+//            child.setText(childTitle);
+//        else
+//            Log.e(TAG, "child textview is null, child position greater than 2");
+        return view;
     }
 
     @Override
     public boolean isChildSelectable(int i, int i1) {
-        return false;
+        return true;
     }
 }
