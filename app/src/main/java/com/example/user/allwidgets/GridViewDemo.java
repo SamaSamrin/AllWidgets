@@ -2,6 +2,7 @@ package com.example.user.allwidgets;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,11 @@ public class GridViewDemo extends Activity {
                 Toast.makeText(GridViewDemo.this, ""+String.valueOf(i+1), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void goToExpandableListView(View view){
+        Intent i = new Intent(GridViewDemo.this, ExpandableListViewDemo.class);
+        startActivity(i);
     }
 }
 

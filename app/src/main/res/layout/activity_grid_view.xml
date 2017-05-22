@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.user.allwidgets.GridView">
+    tools:context="com.example.user.allwidgets.GridViewDemo">
 
     <GridView
         android:id="@+id/gridview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="430dp"
         android:columnWidth="100dp"
         android:numColumns="auto_fit"
         android:verticalSpacing="10dp"
@@ -20,4 +20,17 @@
         tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="8dp" />
 
-</android.widget.LinearLayout>
+    <Button
+        android:id="@+id/go_to_expandable_listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:padding="5dp"
+        android:background="@color/colorAccent"
+        android:text="Go To Exapndable List View"
+        android:textColor="@android:color/white"
+        android:onClick="goToExpandableListView"/>
+
+</android.widget.RelativeLayout>

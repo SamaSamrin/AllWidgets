@@ -20,7 +20,8 @@
         <activity
             android:name=".TextStuff"
             android:label="@string/title_activity_text_stuff" />
-        <activity android:name=".GridViewDemo"></activity>
+        <activity android:name=".GridViewDemo" />
+        <activity android:name=".ExpandableListViewDemo"></activity>
     </application>
 
 </manifest>
