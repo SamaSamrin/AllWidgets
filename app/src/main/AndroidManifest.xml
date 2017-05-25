@@ -22,7 +22,10 @@
             android:label="@string/title_activity_text_stuff" />
         <activity android:name=".GridViewDemo" />
         <activity android:name=".ExpandableListViewDemo" />
-        <activity android:name=".TableDemo"></activity>
+        <activity android:name=".TableDemo" />
+        <activity
+            android:name=".TabDemo"
+            android:label="@string/title_activity_tab_demo"></activity>
     </application>
 
 </manifest>

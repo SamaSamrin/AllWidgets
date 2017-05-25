@@ -24,7 +24,21 @@ public class GridViewDemo extends Activity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(GridViewDemo.this, ""+String.valueOf(i+1), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(GridViewDemo.this, ""+String.valueOf(i+1), Toast.LENGTH_SHORT).show();
+                Intent intent= null;
+                if(i==0){
+                    intent = new Intent(GridViewDemo.this, TableDemo.class);
+                    Toast.makeText(GridViewDemo.this, "Table Layout", Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                }else if(i==1){
+                    intent = new Intent(GridViewDemo.this, ExpandableListViewDemo.class);
+                    Toast.makeText(GridViewDemo.this, "Expandable ListView", Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                }else if(i==2){
+                    intent = new Intent(GridViewDemo.this, TabDemo.class);
+                    Toast.makeText(GridViewDemo.this, "Tabs Host", Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -38,7 +52,7 @@ public class GridViewDemo extends Activity {
 class ImageAdapter extends BaseAdapter{//mandatory to override 4 methods
 
     Context context;
-    Integer[] imageIDs = {R.drawable.la_mode_1, R.drawable.la_mode_2, R.drawable.la_mode_3,
+    Integer[] imageIDs = {R.drawable.blue_table, R.drawable.collapse_arrow, R.drawable.tab,
                           R.drawable.la_mode_4, R.drawable.la_mode_5, R.drawable.la_mode_6};
 
     ImageAdapter(Context context){
