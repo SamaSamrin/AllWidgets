@@ -35,7 +35,7 @@ public class GridViewDemo extends Activity {
                     Toast.makeText(GridViewDemo.this, "Expandable ListView", Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                 }else if(i==2){
-                    intent = new Intent(GridViewDemo.this, TabDemo.class);
+                    intent = new Intent(GridViewDemo.this, TabHostDemo.class);
                     Toast.makeText(GridViewDemo.this, "Tabs Host", Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                 }

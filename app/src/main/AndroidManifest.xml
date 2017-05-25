@@ -23,9 +23,7 @@
         <activity android:name=".GridViewDemo" />
         <activity android:name=".ExpandableListViewDemo" />
         <activity android:name=".TableDemo" />
-        <activity
-            android:name=".TabDemo"
-            android:label="@string/title_activity_tab_demo"></activity>
+        <activity android:name=".TabHostDemo"></activity>
     </application>
 
 </manifest>
